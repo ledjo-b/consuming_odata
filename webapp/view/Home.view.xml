@@ -1,11 +1,13 @@
-<mvc:View
-	controllerName="sap.ui.basicTemplate.controller.Home"
-	displayBlock="true"
+<mvc:View controllerName="sap.ui.consume_odata.controller.Home" displayBlock="true"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
-	<Page
-		id="page"
-		title="{i18n>title}">
-		<content></content>
+	<Page id="page" title="{i18n>title}">
+
+		<content>
+			<List headerText="Employes from Northwind" items="{MyModel>/Employees}">
+				<StandardListItem title="{MyModel>FirstName}" />
+			</List>
+		</content>
+
 	</Page>
 </mvc:View>

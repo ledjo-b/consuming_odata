@@ -1,7 +1,7 @@
 {
 	"_version": "1.21.0",
 	"sap.app": {
-		"id": "sap.ui.basicTemplate",
+		"id": "sap.ui.consume_odata",
 		"type": "application",
 		"i18n": {
 			"bundleUrl": "i18n/i18n.properties",
@@ -16,7 +16,16 @@
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
 		"resources": "resources.json",
-		"ach": "ach"
+		"ach": "ach",
+		"dataSources": {
+			"Northwind.svc": {
+				"uri": "/Northwind/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
 	},
 
 	"sap.ui": {
@@ -38,7 +47,7 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.ui.basicTemplate.view.App",
+			"viewName": "sap.ui.consume_odata.view.App",
 			"type": "XML",
 			"async": true,
 			"id": "app"
@@ -59,12 +68,22 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "sap.ui.basicTemplate.i18n.i18n",
+					"bundleName": "sap.ui.consume_odata.i18n.i18n",
 					"supportedLocales": [
 						""
 					],
 					"fallbackLocale": ""
 				}
+			},
+			"MyModel": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "Northwind.svc",
+				"preload": true
 			}
 		},
 		"resources": {
@@ -76,7 +95,7 @@
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
-				"viewPath": "sap.ui.basicTemplate.view",
+				"viewPath": "sap.ui.consume_odata.view",
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"async": true

@@ -5,7 +5,7 @@ sap.ui.define([
 ], function(UIComponent, Device, models) {
 	"use strict";
 
-	return UIComponent.extend("sap.ui.basicTemplate.Component", {
+	return UIComponent.extend("sap.ui.consume_odata.Component", {
 
 		metadata: {
 			manifest: "json"

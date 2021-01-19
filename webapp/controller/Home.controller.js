@@ -4,7 +4,7 @@ sap.ui.define([
 ], function(Controller, formatter) {
 	"use strict";
 
-	return Controller.extend("sap.ui.basicTemplate.controller.App", {
+	return Controller.extend("sap.ui.consume_odata.controller.App", {
 
 		formatter: formatter,
 

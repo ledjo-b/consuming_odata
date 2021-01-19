@@ -7,7 +7,7 @@ sap.ui.define([
 
 	Opa5.extendConfig({
 		arrangements: new Startup(),
-		viewNamespace: "sap.ui.basicTemplate.view.",
+		viewNamespace: "sap.ui.consume_odata.view.",
 		autoWait: true
 	});
 });

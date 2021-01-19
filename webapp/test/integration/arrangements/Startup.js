@@ -3,7 +3,7 @@ sap.ui.define([
 ], function(Opa5) {
 	"use strict";
 
-	return Opa5.extend("sap.ui.basicTemplate.test.integration.arrangements.Startup", {
+	return Opa5.extend("sap.ui.consume_odata.test.integration.arrangements.Startup", {
 
 		iStartMyApp: function (oOptions) {
 			oOptions = oOptions || {};
@@ -14,7 +14,7 @@ sap.ui.define([
 			// start the app UI component
 			this.iStartMyUIComponent({
 				componentConfig: {
-					name: "sap.ui.basicTemplate",
+					name: "sap.ui.consume_odata",
 					manifest: true
 				},
 				hash: oOptions.hash,
